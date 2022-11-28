@@ -50,7 +50,8 @@ output_file = os.path.join(input_path, "facedect.json")
 faceinfo_dicts = []
 folder_path = os.path.join(input_path, "frames")
 print(folder_path)
-images = os.listdir(folder_path).sort()
+images = os.listdir(folder_path)
+images.sort()
 os.makedirs("tmp/%s"%os.path.basename(input_path), exist_ok = True)
 
 with mp_face_detection.FaceDetection(
